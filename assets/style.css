@@ -1,0 +1,23 @@
+.form-control{
+    flex-basis: 90%;
+}
+
+.bg-primary{
+    background-color: lightgray !important;
+}
+#email-commento{
+    margin-top: 20px;
+}
+
+div i{
+    font-size: 40px
+}
+
+#playerDado,
+#bancoDado,
+#vincitore{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

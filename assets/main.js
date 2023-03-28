@@ -22,16 +22,26 @@ function controlloEmail(){
         }
     }
 
+    commentoEmail = document.getElementById('email-commento');
+    commentoEmail.classList.remove("alert", "alert-success", "alert-danger") //per settare a default quando si clicca nuovamente il comando senza f5 pagina
 
     if(soldatino == true){
-        //document.writeln("l'email coincide con una in archivio");
+
+        commentoEmail.classList.add("alert", "alert-success");
+        commentoEmail.innerText = "l'email corrisponde ad una presente in archivio";
         console.log("l'email coincide con una in archivio");
-        alert("l'email coincide con una in archivio");
+        //alert("l'email coincide con una in archivio");
+
     }else{
+
+        commentoEmail.classList.add("alert", "alert-danger");
+        commentoEmail.innerText = "l'email non corrisponde ad una presente in archivio";
         console.log("l'email non coincide");
-        alert("l'email NON coincide con una in archivio");
+        //alert("l'email NON coincide con una in archivio");
     }
 }
+
+
 function randomDadi(){
 
     let banco = 0;
@@ -59,15 +69,50 @@ function randomDadi(){
     console.log(player);
     console.log(banco);
 
-    document.getElementById('playerDado').innerHTML = 'Il giocatore ha fatto: ' + player;
-    document.getElementById('bancoDado').innerHTML = 'Il banco ha fatto: ' + banco;
+    let playerDadoIcona = document.getElementById('playerDadoIcona');
+    playerDadoIcona.classList.remove("fa-solid", "fa-dice-six", "fa-dice-five",  "fa-dice-four", "fa-dice-three", "fa-dice-two", "fa-dice-one" )
+
+   if(player == 6){
+    playerDadoIcona.classList.add("fa-solid", "fa-dice-six")
+  }else if(player ==5){
+    playerDadoIcona.classList.add("fa-solid", "fa-dice-five")
+  }else if(player ==4){
+    playerDadoIcona.classList.add("fa-solid", "fa-dice-four")
+  }else if(player ==3){
+    playerDadoIcona.classList.add("fa-solid", "fa-dice-three")
+  }else if(player ==2){
+    playerDadoIcona.classList.add("fa-solid", "fa-dice-two")
+  }else{
+    playerDadoIcona.classList.add("fa-solid", "fa-dice-one")
+  }
+  
+
+    let bancoDadoIcona = document.getElementById('bancoDadoIcona');
+    bancoDadoIcona.classList.remove("fa-solid", "fa-dice-six", "fa-dice-five",  "fa-dice-four", "fa-dice-three", "fa-dice-two", "fa-dice-one" )
+
+    if(banco == 6){
+    bancoDadoIcona.classList.add("fa-solid", "fa-dice-six")
+    }else if(banco ==5){
+    bancoDadoIcona.classList.add("fa-solid", "fa-dice-five")
+    }else if(banco ==4){
+    bancoDadoIcona.classList.add("fa-solid", "fa-dice-four")
+    }else if(banco ==3){
+    bancoDadoIcona.classList.add("fa-solid", "fa-dice-three")
+    }else if(banco ==2){
+    bancoDadoIcona.classList.add("fa-solid", "fa-dice-two")
+    }else{
+    bancoDadoIcona.classList.add("fa-solid", "fa-dice-one")
+    }
+
+
+
 
     if(player> banco){
-        document.getElementById('vincitore').innerHTML = 'Il giocatore vince';
+        document.getElementById('vincitore').innerHTML = 'HAI VINTO!';
     }else if(player == banco){
-        document.getElementById('vincitore').innerHTML = 'Il giocatore pareggia';
+        document.getElementById('vincitore').innerHTML = 'HAI FATTO PUSH!';
     }else{
-        document.getElementById('vincitore').innerHTML = 'Il banco vince';
+        document.getElementById('vincitore').innerHTML = 'HAI PERSO :(';
     }
 }
 
