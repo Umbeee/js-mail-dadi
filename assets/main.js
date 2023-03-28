@@ -24,14 +24,52 @@ function controlloEmail(){
 
 
     if(soldatino == true){
+        //document.writeln("l'email coincide con una in archivio");
         console.log("l'email coincide con una in archivio");
+        alert("l'email coincide con una in archivio");
     }else{
         console.log("l'email non coincide");
+        alert("l'email NON coincide con una in archivio");
+    }
+}
+function randomDadi(){
+
+    let banco = 0;
+
+    let player = 0;
+
+    for(let i=0; i< 1; i++){
+        let random = Math.floor(Math.random() * 10);
+        if(random <= 6 && random>0){
+            banco = random;
+        }else{
+            i= -1;
+        }
+    }
+
+    for(let i=0; i< 1; i++){
+        let random = Math.floor(Math.random() * 10);
+        if(random <= 6 && random>0){
+            player = random;
+        }else{
+            i= -1;
+        }
+    }
+
+    console.log(player);
+    console.log(banco);
+
+    document.getElementById('playerDado').innerHTML = 'Il giocatore ha fatto: ' + player;
+    document.getElementById('bancoDado').innerHTML = 'Il banco ha fatto: ' + banco;
+
+    if(player> banco){
+        document.getElementById('vincitore').innerHTML = 'Il giocatore vince';
+    }else if(player == banco){
+        document.getElementById('vincitore').innerHTML = 'Il giocatore pareggia';
+    }else{
+        document.getElementById('vincitore').innerHTML = 'Il banco vince';
     }
 }
 
 
-let banco = Math.floor(Math.random() * 10); 
-
-console.log(banco);
 
